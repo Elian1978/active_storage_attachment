@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<% if @profile.avatar.attached? %>
+<%= image_tag @profile.avatar.variant(resize: '200x200').processed %>
+<% end %> 
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @profile.description %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
